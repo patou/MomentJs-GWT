@@ -5,6 +5,7 @@
 *.war
 
 # gwt caches and compiled units #
+target/
 war/gwt_bree/
 gwt-unitCache/
 
@@ -26,3 +27,10 @@ www-test/
 
 #old GWT (1.5) created this dir
 .gwt-tmp/
+
+
+#IDE files
+*.iml
+.project
+.settings
+.idea
