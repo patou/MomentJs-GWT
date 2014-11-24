@@ -3,6 +3,8 @@ package com.github.momentjsgwt.client;
 import com.github.momentjsgwt.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
@@ -36,11 +38,16 @@ public class MomentJs implements EntryPoint {
 
   private final Messages messages = GWT.create(Messages.class);
 
+  private final ApplicationResources resources = GWT.create(ApplicationResources.class);
+
   /**
    * This is the entry point method.
    */
   public void onModuleLoad() {
+    resources.style().ensureInjected();
+
     final Button sendButton = new Button( messages.sendButton() );
+    sendButton.addStyleName(resources.style().animate());
     final TextBox nameField = new TextBox();
     nameField.setText( messages.nameField() );
     final Label errorLabel = new Label();

@@ -19,4 +19,8 @@
   <source path='client' />
   <source path='shared' />
 
+
+  <!-- Activation GSS -->
+  <set-configuration-property name="CssResource.enableGss" value="true" />
+
 </module>
