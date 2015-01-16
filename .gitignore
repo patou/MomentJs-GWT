@@ -34,3 +34,5 @@ www-test/
 .project
 .settings
 .idea
+momentjsgwt/war/com.github.momentjsgwt.MomentJsJUnit.JUnit/*
+deploy

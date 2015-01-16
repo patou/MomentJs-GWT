@@ -19,7 +19,7 @@
     /* @alternate */ background-image: -webkit-linear-gradient(left, START_COLOR 0%, END_COLOR 100%);
     /* @alternate */ background-image: -o-linear-gradient(left, START_COLOR 0%, END_COLOR 100%);
     /* @alternate */ background-image: -ms-linear-gradient(left, START_COLOR 0%, END_COLOR 100%);
-    background-image: linear-gradient(left, START_COLOR 0%, END_COLOR 100%);
+    background-image: linear-gradient(to left, START_COLOR 0%, END_COLOR 100%);
 }
 
 /* CSS3 support */
@@ -59,11 +59,41 @@
     -webkit-animation-name: slidein;
 }
 /*noinspection ALL*/
-.class-name,  span[data-text^='styled'] {
+.class-name {
     display: block;
 @mixin size(add(PADDING_RIGHT, 150px, PADDING_LEFT), 50px);
-    padding-right: PADDING_RIGHT;
+    padding-right: PADDING_LEFT;
     margin-bottom:5px;
     color: MY_GRAY;
 @mixin gradient(#cc0000, #f07575);
 }
+
+@def COL 50px;
+@def SEP 5px;
+
+.col1 {
+    width: add(COL, SEP);
+
+.col2 {
+    width: mult(add(COL, SEP), 2);
+}
+
+.col2 {
+    width: mult(add(COL, SEP), 3);
+}
+
+.col2 {
+    width: mult(add(COL, SEP), 4);
+}
+
+.demi {
+    width: divide(COL, 2);
+}
+@def MARGIN mult(divide(100%, 6), 4);
+
+@sprite .mySpriteClass {gwt-image: "imageAccessor"; other: property;}
+.mySpriteClass {gwt-sprite: "imageAccessor"; other: property;}
+
+@def GRAY        #E3E3E3;
+@def GRAY_L      adjustBrightness(GRAY, 8.5); /* #F9F9F9 */
+@def GRAY_D      adjustBrightness(GRAY, -10); /* #939393;*/

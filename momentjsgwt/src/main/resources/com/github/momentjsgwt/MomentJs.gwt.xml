@@ -22,5 +22,7 @@
 
   <!-- Activation GSS -->
   <set-configuration-property name="CssResource.enableGss" value="true" />
+  <!-- Automatic convert css to gss in memory -->
+  <set-configuration-property name="CssResource.legacy" value="true" />
 
 </module>
