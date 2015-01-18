@@ -5,8 +5,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.momentjsgwt</groupId>
-  <artifactId>momentjsgwt</artifactId>
+  <groupId>com.github.testgwt</groupId>
+  <artifactId>testgwt</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>GWT Maven Archetype</name>
@@ -83,7 +83,7 @@
         <configuration>
           <runTarget>MomentJs.html</runTarget>
           <modules>
-            <module>com.github.momentjsgwt.MomentJs</module>
+            <module>com.github.testgwt.MomentJs</module>
           </modules>
         </configuration>
       </plugin>

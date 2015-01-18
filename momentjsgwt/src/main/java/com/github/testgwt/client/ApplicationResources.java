@@ -1,4 +1,4 @@
-package com.github.momentjsgwt.client;
+package com.github.testgwt.client;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
