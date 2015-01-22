@@ -1,6 +1,5 @@
 package com.github.testgwt.client;
 
-import com.github.testgwt.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -8,8 +7,14 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
-import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.*;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.PopupPanel;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -74,6 +79,11 @@ public class Testgwt implements EntryPoint, ClickHandler, KeyUpHandler {
 
     sendButton.addClickHandler(this);
     nameField.addKeyUpHandler(this);
+    
+    Test test = getTest();
+    sendButton.setText(test.getName());
+    nameField.setValue(test.ask());
+    UI ui = new UI();
   }
 
   /**
@@ -91,6 +101,10 @@ public class Testgwt implements EntryPoint, ClickHandler, KeyUpHandler {
       sendNameToServer();
     }
   }
+  
+  public void sendNameToServer() {
+	  sendNameToServer(nameField.getValue());
+  }
 
   /**
    * Send the name from the nameField to the server and wait for a response.
@@ -101,4 +115,8 @@ public class Testgwt implements EntryPoint, ClickHandler, KeyUpHandler {
     textToServerLabel.setText(name);
     dialogBox.setText("Remote Procedure Call");
   }
+  
+  private native Test getTest() /*-{
+	  return new $wnd.Test();
+  }-*/;
 }

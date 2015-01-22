@@ -1,8 +1,10 @@
 package com.github.testgwt.client;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.js.JsExport;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTMLPanel;
 
 /**
@@ -16,5 +18,13 @@ public class UI extends Composite {
 
     public UI() {
         initWidget(ourUiBinder.createAndBindUi(this));
+    }
+    
+    @JsExport("$wnd.gwtExport")
+    public static void gwtExport(String name) {
+  	  DialogBox dialog = new DialogBox(true);
+  	  dialog.setText(name);
+  	  dialog.setWidget(new UI());
+  	  dialog.center();
     }
 }

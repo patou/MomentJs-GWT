@@ -24,7 +24,17 @@
     <!-- If you add any GWT meta tags, they must   -->
     <!-- be added before this line.                -->
     <!--                                           -->
-    <script type="text/javascript" language="javascript" src="MomentJs/MomentJs.nocache.js"></script>
+    <script type="text/javascript" language="javascript" src="Testgwt/Testgwt.nocache.js"></script>
+    <script type="text/javascript">
+    	var Test = function () {
+    		return  {
+    			name: "gwt",
+    			ask: function () {
+    				return prompt("Your name ?", "");
+    			}
+    		}
+    	}
+    </script>
   </head>
 
   <!--                                           -->
